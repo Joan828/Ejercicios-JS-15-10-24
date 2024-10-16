@@ -64,7 +64,7 @@ console.log(duplicaNumero(2))
 // Si la función no recibe un dato tipo string debe devolver el string 'Debo ser ejecutada con un string'. 
 // Si recibe un string vacío debe devolver 'Debo ser ejecutada con un string no vacío'.
 function caracterInicial(palabra){
-  if (palabra == ""){
+  if (palabra.length == 0){
     return "Debo ser ejecutada con un string no vacío"
   }else if(typeof palabra == "string"){
     return "La primera letra de tu palabra es " + palabra.charAt(0)
@@ -79,7 +79,7 @@ console.log(caracterInicial("Albaricoque"));
 // Si la función no recibe un dato tipo string debe devolver el string 'Debo ser ejecutada con un string'.
 // Si recibe un string vacío debe devolver 'Debo ser ejecutada con un string no vacío'.
 function ultimoCaracter(palabra){
-  if (palabra == ""){
+  if (palabra.length == 0){
     return "Debo ser ejecutada con un string no vacío"
   }else if(typeof palabra == "string"){
     return "La última letra de tu palabra es " + palabra.charAt(palabra.length-1)
@@ -93,9 +93,7 @@ console.log(ultimoCaracter("Albaricoque"));
 // Si la función no recibe un dato tipo string debe devolver el string 'Debo ser ejecutada con un string'.
 function cuentaCaracteres(cadena){
   if(typeof cadena === "string"){
-    let caracteres = cadena.length
-    caracteres = +caracteres
-    return caracteres
+    return cadena.length
   }else{
     return "Debo ser ejecutada con un string"
   }
@@ -126,7 +124,7 @@ esPalindromo("rallar")
 // Si la función no recibe un número debería devolver devolver 'no es un formato correcto'.
 function getPrecioMostrar(precio){
   if(typeof precio === "number"){
-    return precio + ".00 €"
+    return precio.toFixed(2)
   }else{
     return "No es un formato correcto"
   }
